@@ -5,7 +5,7 @@
 
 @section('pageStyle')
 
-    <link rel="stylesheet" href="{{ asset(mix('css/pages/authentication.css')) }}">
+    <link rel="stylesheet" href="{{ asset('css/pages/authentication.css') }}">
 
 @endsection
 
