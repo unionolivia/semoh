@@ -18,7 +18,7 @@ class FinancialController extends Controller
 
     public function history(){
         $breadcrumbs = [
-            ['link'=>"/",'name'=>"Home"],['link' => "#", 'name'=>"Financials"], ['name' => "History"]
+            ['link'=>"/dashboard",'name'=>"Dashboard"],['link' => "#", 'name'=>"Financials"], ['name' => "History"]
         ];
 
         return view('/pages/history', [

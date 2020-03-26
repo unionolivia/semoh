@@ -17,7 +17,7 @@ class PortfolioController extends Controller
     public function index()
     {
         $breadcrumbs = [
-            ['link'=>"/",'name'=>"Home"], ['name' => "Portfolio"]
+            ['link'=>"/dashboard",'name'=>"Dashboard"], ['name' => "Portfolio"]
         ];
 
         return view('/', [

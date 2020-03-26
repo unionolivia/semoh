@@ -12,18 +12,11 @@
         "submenu": [
             {"url":"addproject", "name":"Add Project", "i18n":"nav.main_menu.sub_menu1", "icon":"feather icon-layout"},
             {"url":"viewproject", "name":"View project", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-layout"},
-            {"url":"updateproject", "name":"Update proect", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-layout"}
+            {"url":"updateproject", "name":"Update project", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-layout"}
         ]
     },
 
-    {"url":"#", "name":"Projects Package", "icon":"feather icon-pocket",
-        "submenu": [
-            {"url":"createprojectpackage", "name":"Create Project Package", "i18n":"nav.main_menu.sub_menu1", "icon":"feather icon-pocket"},
-            {"url":"viewprojectpackage", "name":"View Project Package", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-pocket"},
-            {"url":"updateproject", "name":"Update proect", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-pocket"}
-        ]
-    },   
-
+   
     {"url":"#", "name":"Legal documents", "icon":"feather icon-folder",
         "submenu": [
             {"url":"addlegal", "name":"Add legal documents", "i18n":"nav.main_menu.sub_menu1", "icon":"feather icon-folder-plus"},

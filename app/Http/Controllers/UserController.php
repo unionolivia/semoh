@@ -14,7 +14,7 @@ class UserController extends Controller
     public function index()
     {
         $breadcrumbs = [
-            ['link'=>"/",'name'=>"Home"],['name'=>"Adduser"]
+            ['link'=>"/dashboard",'name'=>"Dashboard"],['name'=>"Adduser"]
         ];
 
         return view('/pages/adduser', [
@@ -32,7 +32,7 @@ class UserController extends Controller
     public function create()
     {
         $breadcrumbs = [
-            ['link'=>"/",'name'=>"Home"],['name'=>"viewuser"]
+            ['link'=>"/dashboard",'name'=>"Dashboard"],['name'=>"viewuser"]
         ];
 
         return view('/pages/viewuser', [
@@ -50,7 +50,7 @@ class UserController extends Controller
     public function show()
     {
         $breadcrumbs = [
-            ['link'=>"/",'name'=>"Home"],['name'=>"approveuser"]
+            ['link'=>"/dashboard",'name'=>"Dashboard"],['name'=>"approveuser"]
         ];
 
         return view('/pages/approveuser', [

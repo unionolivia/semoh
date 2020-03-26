@@ -14,7 +14,7 @@ class TicketController extends Controller
     public function index()
     {
         $breadcrumbs = [
-            ['link'=>"/",'name'=>"Home"],['name'=>"Ticket"]
+            ['link'=>"/dashboard",'name'=>"Dashboard"],['name'=>"Ticket"]
         ];
 
         return view('/pages/ticket', [

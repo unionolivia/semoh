@@ -14,10 +14,44 @@ class ProjectController extends Controller
     public function index()
     {
         $breadcrumbs = [
-            ['link'=>"/",'name'=>"Home"],['name'=>"Projects"]
+            ['link'=>"/dashboard",'name'=>"Dashboard" ],['name'=>"Projects"]
         ];
 
         return view('/pages/project', [
+            'breadcrumbs' => $breadcrumbs
+            
+        ]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function view()
+    {
+        $breadcrumbs = [
+            ['link'=>"/dashboard",'name'=>"Dashboard"],['name'=>"view Projects"]
+        ];
+
+        return view('/pages/viewproject', [
+            'breadcrumbs' => $breadcrumbs
+            
+        ]);
+    }
+
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function updateproject()
+    {
+        $breadcrumbs = [
+            ['link'=>"/dashboard",'name'=>"Dashboard"],['name'=>"Update Projects"]
+        ];
+
+        return view('/pages/updateproject', [
             'breadcrumbs' => $breadcrumbs
             
         ]);
@@ -31,7 +65,7 @@ class ProjectController extends Controller
     public function create()
     {
         $breadcrumbs = [
-            ['link'=>"/",'name'=>"Home"],['name'=>"viewincart"]
+            ['link'=>"/dashboard",'name'=>"Dashboard"],['name'=>"viewincart"]
         ];
 
         return view('/pages/viewincart', [
@@ -50,6 +84,25 @@ class ProjectController extends Controller
     {
         //
     }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function project()
+    {
+        $breadcrumbs = [
+            ['link'=>"/dashboard",'name'=>"Dashboard"],['name'=>"add project"]
+        ];
+
+        return view('/pages/addproject', [
+            'breadcrumbs' => $breadcrumbs
+            
+        ]);
+    }
+
+
 
     /**
      * Display the specified resource.

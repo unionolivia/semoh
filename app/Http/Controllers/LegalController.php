@@ -14,7 +14,7 @@ class LegalController extends Controller
     public function index()
     {
         $breadcrumbs = [
-            ['link'=>"/",'name'=>"Home"],['name'=>"Legal"]
+            ['link'=>"/dashboard",'name'=>"Dashboard"],['name'=>"Legal"]
         ];
 
         return view('/pages/legal', [

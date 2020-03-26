@@ -14,7 +14,7 @@ class SaleController extends Controller
     public function index()
     {
         $breadcrumbs = [
-            ['link'=>"/",'name'=>"Home"],['name'=>"Sales"]
+            ['link'=>"/dashboard",'name'=>"Dashboard"],['name'=>"Sales"]
         ];
 
         return view('/pages/sale', [

@@ -9,7 +9,7 @@ class LayoutController extends Controller
     public function content(){
 
         $breadcrumbs = [
-            ['link'=>"/",'name'=>"Home"],['link'=>"/",'name'=>"Starter Kit"], ['name'=>"Content Layout"]
+            ['link'=>"/dashboard",'name'=>"Dashboard"], ['name'=>"Content Layout"]
         ];
 
         return view('/pages/content-layout', [

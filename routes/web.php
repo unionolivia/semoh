@@ -24,6 +24,9 @@ Route::resource('ticket', 'TicketController');
 Route::get('viewuser', 'UserController@create');
 Route::get('approveuser', 'UserController@show');
 Route::get('/history', 'FinancialController@history');
+Route::get('addproject', 'ProjectController@project');
+Route::get('viewproject', 'ProjectController@view');
+Route::get('updateproject', 'ProjectController@updateproject');
 
 // Route full layout
 Route::get('full', 'LayoutController@full');
