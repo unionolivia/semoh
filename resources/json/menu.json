@@ -1,39 +1,44 @@
 {"menu": [
     
     {"url":"dashboard", "name":"Dashboard", "i18n":"nav.content_layout", "icon":"feather icon-home"},
-    {"url":"#", "name":"Register User", "icon":"feather icon-users",
+    {"url":"#", "name":"Register Members", "icon":"feather icon-users",
         "submenu": [
-            {"url":"adduser", "name":"Add User", "i18n":"nav.main_menu.sub_menu1", "icon":"feather icon-user-plus"},
-            {"url":"viewuser", "name":"View User", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-user"},
-            {"url":"approveuser", "name":"Approve User", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-users"}
+            {"url":"members", "name":"Add Member", "i18n":"nav.main_menu.sub_menu1", "icon":"feather icon-user-plus"},
+            {"url":"viewmembers", "name":"View Members", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-user"}            
         ]
     },
-    {"url":"#", "name":"Portfolio", "icon":"feather icon-shopping-bag",
+    {"url":"#", "name":"Extension", "icon":"feather icon-map",
         "submenu": [
-            {"url":"addproject", "name":"Add Project", "i18n":"nav.main_menu.sub_menu1", "icon":"feather icon-layout"},
-            {"url":"viewproject", "name":"View project", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-layout"},
-            {"url":"updateproject", "name":"Update project", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-layout"}
+            {"url":"addext", "name":"Add Extension", "i18n":"nav.main_menu.sub_menu1", "icon":"feather icon-map-pin"},
+            {"url":"viewext", "name":"View Extension", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-layout"}            
         ]
     },
 
-   
-    {"url":"#", "name":"Legal documents", "icon":"feather icon-folder",
+    {"url":"#", "name":"Organs", "icon":"feather icon-layers",
         "submenu": [
-            {"url":"addlegal", "name":"Add legal documents", "i18n":"nav.main_menu.sub_menu1", "icon":"feather icon-folder-plus"},
-            {"url":"viewlegal", "name":"View legal documents", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-folder"}
-            
+            {"url":"ministry", "name":"Ministry", "i18n":"nav.main_menu.sub_menu1", "icon":"feather icon-shield"},
+            {"url":"unit", "name":"Unit", "i18n":"nav.main_menu.sub_menu1", "icon":"feather icon-play"},
+            {"url":"committee", "name":"Committee", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-users"}, 
+            {"url":"#", "name":"Cell", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-users"}            
         ]
-    },   
-    
-    {"url":"sales", "name":"Sales", "i18n":"nav.full_layout", "icon":"feather icon-dollar-sign"},
-    {"url":"project", "name":"Project", "i18n":"nav.full_layout", "icon":"feather icon-pocket"},
-    {"url":"#", "name":"Financials", "icon":"feather icon-zap",
+    },  
+
+    {"url":"events", "name":"Events", "i18n":"nav.full_layout", "icon":"feather icon-calendar"},
+    {"url":"#", "name":"Reports", "icon":"feather icon-file",
         "submenu": [
-            {"url":"history", "name":"History", "i18n":"nav.main_menu.sub_menu1"},
-            {"url":"projection", "name":"Projection", "i18n":"nav.main_menu.sub_menu2"}
+            {"url":"ministryreport", "name":"Ministry Report", "i18n":"nav.main_menu.sub_menu1", "icon":"feather icon-shield"},
+            {"url":"servicereport", "name":"Service Report", "i18n":"nav.main_menu.sub_menu1", "icon":"feather icon-play"},
+            {"url":"carereport", "name":"Care Report", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-users"},
+            {"url":"financialreport", "name":"Financial Report", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-users"},
+            {"url":"smrreport", "name":"SMR Report", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-users"}            
         ]
-    },
-    {"url":"legal", "name":"Legal", "i18n":"nav.full_layout", "icon":"feather icon-folder"},
+    },  
+    {"url":"#", "name":"Funding", "icon":"feather icon-dollar-sign",
+        "submenu": [
+            {"url":"fundrequest", "name":"Request", "i18n":"nav.main_menu.sub_menu1", "icon":"feather icon-shield"},
+            {"url":"fundreconciliation", "name":"Reconciliation", "i18n":"nav.main_menu.sub_menu1", "icon":"feather icon-play"}               
+        ]
+    },  
     {"url":"ticket", "name":"Ticket", "i18n":"nav.full_layout", "icon":"feather icon-mail"},
     {"url":"full", "name":"Settings", "i18n":"nav.full_layout", "icon":"feather icon-settings"}
         

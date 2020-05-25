@@ -1,0 +1,210 @@
+$table->string('firstName1');
+$table->string('lastName1');
+$table->string('otherName1');
+$table->string('emailAddress1');
+$table->date('dateofBirth1');
+$table->string('location1');
+$table->string('maritalStatus');
+$table->string('Occupation');
+$table->string('Address');
+$table->string('Country');
+$table->string('City');
+$table->string('State');
+$table->string('Zipcode');
+$table->string('School');
+$table->string('courseofStudy');
+$table->string('hostelAddress');
+$table->string('homeAddress');
+$table->string('level');
+$table->string('Category');
+$table->string('startdate');
+$table->string('enddate');
+$table->string('Occupation2');
+$table->string('Employer');
+$table->string('officeAddress');
+$table->string('Position');
+$table->string('natureofBusiness');
+$table->string('position1');
+$table->string('fathersName');
+$table->string('mothersName');
+$table->string('fatherOccupation');
+$table->string('parentemailAddress');
+$table->string('parentPhonenumber');
+$table->string('parentAddress');
+$table->string('parentMaritalStatus');
+$table->string('Ministry1');
+$table->string('eventType1');
+$table->string('extension');
+$table->string('assignRole');
+
+###############################
+firstName1
+lastName1
+otherName1
+emailAddress1
+dateofBirth1
+location1
+maritalStatus
+Occupation
+Address
+Country
+City
+State
+Zipcode
+School
+courseofStudy
+hostelAddress
+homeAddress
+level
+Category
+startdate
+enddate
+Occupation2
+Employer
+officeAddress
+Position
+natureofBusiness
+position1
+fathersName
+mothersName
+fatherOccupation
+parentemailAddress
+parentPhonenumber
+parentAddress
+parentMaritalStatus
+Ministry1
+eventType1
+extension
+assignRole
+
+
+
+    /**
+     * Show the step 1 Form for creating a new product.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createStep1(Request $request)
+    {
+        $member = $request->session()->get('member');
+        return view('members.create-step1',compact('member', $member));
+    }
+
+
+
+    /**
+     * Post Request to store step1 info in session
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function postCreateStep1(Request $request)
+    {
+
+        $validatedData = $request->validate([
+
+            'firstName1' => 'required',
+            'lastName1' => 'required',
+            'otherName1',
+            'emailAddress1' => 'required',
+            'dateofBirth1',
+            'location1',
+            'maritalStatus',
+            'Occupation',
+            'Address' => 'required',
+            'Country',
+            'City',
+            'State' => 'required',
+            'Zipcode',
+            'School',
+            'courseofStudy',
+            'hostelAddress',
+            'homeAddress',
+            'level',
+            'Category',
+            'startdate',
+            'enddate',
+            'Occupation2',
+            'Employer',
+            'officeAddress',
+            'Position',
+            'natureofBusiness',
+            'position1',
+            'fathersName',
+            'mothersName',
+            'fatherOccupation',
+            'parentemailAddress' => 'required',
+            'parentPhonenumber' => 'required',
+            'parentAddress',
+            'parentMaritalStatus',
+            'Ministry1',
+            'eventType1',
+            'extension' => 'required',
+            'assignRole',
+           
+        ]);
+
+        if(empty($request->session()->get('member'))){
+            $member = new Member();
+            $member->fill($validatedData);
+            $request->session()->put('member', $member);
+        }else{
+            $member = $request->session()->get('member');
+            $member->fill($validatedData);
+            $request->session()->put('member', $member);
+        }
+
+        return redirect('/members/create-step2');
+
+    }
+
+
+     /**
+     * Show the step 2 Form for creating a new product.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createStep2(Request $request)
+    {
+        $member = $request->session()->get('member');
+        return view('members.create-step2',compact('member', $member));
+    }
+
+    /**
+     * Post Request to store step1 info in session
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function postCreateStep2(Request $request)
+    {
+        $member = $request->session()->get('member');
+        if(!isset($member->userImg)) {
+            $request->validate([
+                'userimg' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+
+            $fileName = "userImage-" . time() . '.' . request()->userimg->getClientOriginalExtension();
+
+            $request->userimg->storeAs('userimg', $fileName);
+
+            $member = $request->session()->get('member');
+
+            $member->userImg = $fileName;
+            $request->session()->put('member', $member);
+        }
+        return redirect('/members/create-step3');
+
+    }
+
+    /**
+     * Show the Product Review page
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function removeImage(Request $request)
+    {
+        $member = $request->session()->get('member');
+        $member->memberImg = null;
+        return view('members.create-step2',compact('member', $member));
+    }

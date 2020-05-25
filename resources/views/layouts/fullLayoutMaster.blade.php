@@ -34,6 +34,7 @@
 
         <!-- BEGIN: Content-->
         <div class="app-content content">
+            @include('inc.message')
             <div class="content-wrapper">
                 <div class="content-body">
 

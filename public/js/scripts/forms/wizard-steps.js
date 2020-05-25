@@ -9,6 +9,13 @@
 ==========================================================================================*/
 
 // Wizard tabs with numbers setup
+
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+
+});
 $(".number-tab-steps").steps({
     headerTag: "h6",
     bodyTag: "fieldset",
@@ -16,10 +23,21 @@ $(".number-tab-steps").steps({
     titleTemplate: '<span class="step">#index#</span> #title#',
     labels: {
         finish: 'Submit'
-    },
-    onFinished: function (event, currentIndex) {
+    },    
+    onFinished: function (event, currentIndex) {      
+
+       
+
+        $("#number-tab-steps").submit();
         alert("Form submitted.");
     }
+       
+       
+                
+        
+   
+       
+    
 });
 
 // Wizard tabs with icons setup

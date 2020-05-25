@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Member;
+use App\Models\Extension;
+use App\Models\Ministry;
+use App\Models\Unit;
 
 class DashboardController extends Controller
 {
@@ -11,8 +15,20 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function __construct()
     {
+        $this->middleware('auth');
+    }
+    
+    
+     public function index()
+    {
+       
+       $countmembers = Member::count();
+       $countministries = Ministry::count();       
+       $countunits = Unit::count();
+       $countextensions = Extension::count();
+
         $breadcrumbs = [
             ['link'=>"/",'name'=>"Home"], ['name' => "Dashboard"]
         ];
@@ -20,7 +36,8 @@ class DashboardController extends Controller
         return view('/pages/dashboard', [
             'breadcrumbs' => $breadcrumbs
             
-        ]);
+        ], compact('countmembers', 'countunits', 'countextensions','countministries'));  
+        // ->with('countunits', $countunits)->with('countextensionss', $countextensions);
     }
 
     /**
