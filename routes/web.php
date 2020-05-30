@@ -28,6 +28,7 @@ Route::get('dashboard', ['as'   => 'pages.dashboard', 'uses' => 'DashboardContro
 Route::get('addext', ['as'   => 'pages.addext', 'uses' => 'ExtensionController@index']);
 Route::resource('addexts', 'ExtensionController');
 Route::get('viewext', ['as'   => 'pages.viewext', 'uses' => 'ExtensionController@viewext']);
+Route::get('showext/{id}', ['as'   => 'pages.showext', 'uses' => 'ExtensionController@show']);
 Route::get('editext/{id}', ['as' => 'pages.editext', 'uses' => 'ExtensionController@edit']);
 
 

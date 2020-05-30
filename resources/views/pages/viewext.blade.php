@@ -34,7 +34,7 @@
                         @foreach ($extensions as $extension)
                         <tr>
                           <th scope="row">{{ $extension->id }}</th>
-                          <td><a href="/addext/{{ $extension->id }}">{{ $extension->extname }}</a></td>
+                          <td><a href="/showext/{{ $extension->id }}">{{ $extension->extname }}</a></td>
                           <td>{{ $extension->extlocation }}</td>
                           <td>{{ $extension->extsmr }}</td>
                           <td>{{ $extension->extemail }}</td>
