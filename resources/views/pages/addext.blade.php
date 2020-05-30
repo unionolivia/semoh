@@ -9,7 +9,7 @@
         <div class="card">            
             <div class="card-content">
                 <div class="card-body">
-                    <form class="form-group col-6" method="POST" action="/addext">
+                    <form class="form-group col-6" method="POST" action="/addexts">
                         @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Extension Name</label>

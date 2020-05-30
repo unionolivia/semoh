@@ -46,13 +46,8 @@ class MembersController extends Controller
         $breadcrumbs = [
             ['link'=>"/dashboard",'name'=>"Dashboard"],['name'=>"view members"]
         ];
-
-
         $members = Member::get();
-        return view('/pages/viewmembers', [
-            'breadcrumbs' => $breadcrumbs
-            
-        ])->with('members', $members);
+        return view('/pages/viewmembers',  compact(['members','breadcrumbs']));
 
     }
 
@@ -170,7 +165,9 @@ class MembersController extends Controller
         $member->parentPhonenumber = $request->input('parentPhonenumber');
         $member->parentAddress = $request->input('parentAddress');
         $member->parentMaritalStatus = $request->input('parentMaritalStatus');
+        $member->ministry_id = $request->input('Ministry1');
         $member->Ministry1 = $request->input('Ministry1');
+        $member->unit_id = $request->input('eventType1'); 
         $member->eventType1 = $request->input('eventType1');
         $member->extension_id = $request->input('extension_id');
         $member->assignRole = $request->input('assignRole');

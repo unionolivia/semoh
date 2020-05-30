@@ -7,6 +7,7 @@ use App\Models\Member;
 use App\Models\Extension;
 use App\Models\Ministry;
 use App\Models\Unit;
+use Auth;
 
 class DashboardController extends Controller
 {
@@ -22,8 +23,9 @@ class DashboardController extends Controller
     
     
      public function index()
-    {
-       
+    	{
+    
+       $user = Auth::user();
        $countmembers = Member::count();
        $countministries = Ministry::count();       
        $countunits = Unit::count();
@@ -32,12 +34,19 @@ class DashboardController extends Controller
         $breadcrumbs = [
             ['link'=>"/",'name'=>"Home"], ['name' => "Dashboard"]
         ];
-
-        return view('/pages/dashboard', [
-            'breadcrumbs' => $breadcrumbs
-            
-        ], compact('countmembers', 'countunits', 'countextensions','countministries'));  
-        // ->with('countunits', $countunits)->with('countextensionss', $countextensions);
+      
+				if (!$user) {
+				 	 return view('/pages/start');
+				}
+				else{        
+				  return view('/pages/dashboard', [
+		          'breadcrumbs' => $breadcrumbs
+		          
+		      ], compact('countmembers', 'countunits', 'countextensions','countministries'));  
+		      // ->with('countunits', $countunits)->with('countextensionss', $countextensions);
+		  }
+		     
+        
     }
 
     /**

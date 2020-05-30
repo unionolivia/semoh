@@ -9,7 +9,7 @@
         <div class="card">            
             <div class="card-content">
                 <div class="card-body">
-                <form class="form-group col-6" method="POST" action="/addext/{{ $extension->id }}">
+                <form class="form-group col-6" method="POST" action="/addexts/{{ $extension->id }}">
                         @csrf
                         @method('PUT')
                         <div class="form-group">

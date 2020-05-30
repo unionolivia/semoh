@@ -15,15 +15,21 @@
           <div class="card card-primary card-outline">
             <div class="card-body box-profile">
               <div class="text-center">
+              @if(!empty($member->pictureFile))
                 <img class="profile-user-img img-fluid img-circle round"
-                     src="/storage/members_images/{{ $member->pictureFile  }}"
+                     src="{{ asset('public/members_images/'.$member->pictureFile)}}"
                      alt="User profile picture">
+                 @else
+                  <img class="profile-user-img img-fluid img-circle round"
+                     src="{{ asset('public/noimage.jpg') }}"
+                     alt="User profile picture">
+                 @endif
               </div>
               <hr>
-              <h3 class="profile-username text-center">{{ $member->firstName1 }} {{ $member->lastName1 }}</h3>              
+              <h3 class="profile-username text-center">{{!empty($member->firstName1) ? $member->firstName1 : ''  }} {{ !empty($member->lastName1) ?  $member->lastName1 : '' }}</h3>              
               <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                  <b>Ministry:</b> <a class="float-right">{{ $member->Ministry_id }}</a>
+                  <b>Ministry:</b> <a class="float-right">{{ !empty($member->Ministry_id) ? $member->Ministry_id : '' }}</a>
                 </li>
                 <li class="list-group-item">
                   <b>Extension:</b> <a class="float-right">{{ !empty( $member->extensions ) ? $member->extensions->extname:'' }}</a>
@@ -676,12 +682,6 @@
 
 <!-- BEGIN: Page JS-->
 <script src="{{ asset('/js/scripts/pickers/dateTime/pick-a-datetime.js') }}"></script>
-
-
-
-
-
-
 
 
 @endpush

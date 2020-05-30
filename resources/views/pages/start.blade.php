@@ -35,7 +35,6 @@
                                     <hr>
                                     <div>
                                         <a href="/login" class="btn btn-secondary"> Login </a>
-                                        <a href="/register" class="btn btn-success">Register</a>
                                     </div>
                                 
                             </div>

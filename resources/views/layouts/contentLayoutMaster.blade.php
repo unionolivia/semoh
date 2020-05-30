@@ -70,6 +70,10 @@
         {{-- include footer --}}
         @include('panels/footer')
 
+    <!--JS Scripts -->
+<script src="{{asset('vendors/js/vendors.min.js')}}"></script>
+    <!-- BEGIN Vendor JS-->
+    
         {{-- include default scripts --}}
         @include('panels/scripts')
 

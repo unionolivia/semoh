@@ -40,10 +40,10 @@
                           <td>{{ $extension->extemail }}</td>
                           <td>{{ $extension->extemail }}</td>
                           <td>
-                             <a href="/addext/{{ $extension->id }}/edit" class="btn btn-primary mt-2">Edit</a>
+                             <a href="{{ route('pages.editext', ['id' => $extension->id])}}" class="btn btn-primary mt-2">Edit</a>
                           </td>
                           <td>
-                              <form method="POST" action="/addext/{{ $extension->id }}">
+                              <form method="POST" action="/addexts/{{ $extension->id }}">
                                   @csrf
                                   @method('DELETE')
                                   <button type="submit" class="btn btn-danger mt-2 float-right">DELETE</button>

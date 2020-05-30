@@ -12,7 +12,7 @@
 */      
 
 // Route content layout
-Route::get('/', 'LayoutController@full');
+Route::get('/', ['as'   => 'pages.start', 'uses' => 'LayoutController@full']);
 
 
 //Ministry
@@ -21,12 +21,15 @@ Route::post('/ministry/update', 'MinistryController@update')->name('update-minis
 
 
 //Dashboard
-Route::resource('dashboard', 'DashboardController');
+Route::get('dashboard', ['as'   => 'pages.dashboard', 'uses' => 'DashboardController@index']);
+
 
 //Extension
-Route::resource('addext', 'ExtensionController');
-Route::get('viewext', 'ExtensionController@viewext');
-// Route::get('/addext/{id}', 'ExtensionController@destroy')->name('destroy');
+Route::get('addext', ['as'   => 'pages.addext', 'uses' => 'ExtensionController@index']);
+Route::resource('addexts', 'ExtensionController');
+Route::get('viewext', ['as'   => 'pages.viewext', 'uses' => 'ExtensionController@viewext']);
+Route::get('editext/{id}', ['as' => 'pages.editext', 'uses' => 'ExtensionController@edit']);
+
 
 //Units & Commitee
 Route::resource('unit', 'UnitController');
@@ -44,13 +47,16 @@ Route::get('approveuser', 'UserController@approve');
 Route::get('viewuser', 'UserController@viewuser');
 Route::get('register', 'UserController@register');
 Route::get('profile', 'UserController@profile');
-Route::resource('adduser', 'UserController');
+Route::get('adduser', ['as'   => 'pages.adduser', 'uses' => 'UserController@adduser']);
+
 
 // members controller
-Route::resource('members', 'MembersController');
-Route::get('viewmembers', 'MembersController@viewmembers');
-Route::post('/members/store', 'MembersController@store');
-Route::post('/members/update', 'MembersController@update')->name('update');
+Route::get('members', ['as' => 'pages.members', 'uses' => 'MembersController@index']);
+Route::resource('member', 'MembersController');
+Route::get('viewmembers', ['as' => 'pages.viewmembers', 'uses' => 'MembersController@viewmembers']);
+Route::get('memberprofile/{id}', ['as' => 'pages.memberprofile', 'uses' => 'MembersController@show']);
+Route::post('/member/store', 'MembersController@store');
+Route::post('/member/update', 'MembersController@update')->name('update');
 
 
 // Report 

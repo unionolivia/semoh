@@ -32,18 +32,22 @@
                                 <tbody>
                                     @foreach ($members as $member)
                                         <tr>
-                                            <td><a href="/members/{{ $member->id }}">{{ $member->firstName1 }} {{ $member->lastName1 }}</a></td>
+                                            <td><a href="{{ route('pages.memberprofile', ['id' => $member->id] )}}">{{ $member->firstName1 }} {{ $member->lastName1 }}</a></td>
                                             <td>{{ $member->emailAddress1 }}</td>
                                             <td>{{ $member->Phonenumber1 }}</td>
                                             <td>{{ $member->extension }}</td>
                                             <td>{{ $member->assignRole }}</td>
                                             <td>{{ $member->Ministry1 }}</td>
                                             <td>
-                                                <a href="/members/{{ $member->id }}" class='btn btn-primary mt-2'>View</a>
+                                                <a href="{{ route('pages.memberprofile', ['id' => $member->id] )}}" class='btn btn-primary mt-2'>View</a>
                                                                                               
                                             </td>
                                             <td>
-                                                <form method="POST" action="/members/{{ $member->id }}">
+                                                <a href="{{route('pages.adduser')}}" class='btn btn-info mt-2'>Add as User</a>
+                                                                                              
+                                            </td>
+                                            <td>
+                                                <form method="POST" action="/member/{{ $member->id }}">
                                                     @csrf
                                                      @method('DELETE')
                                                     <button type="submit" class="btn btn-danger mt-2 float-right">DELETE</button>

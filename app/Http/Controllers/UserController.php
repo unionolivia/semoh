@@ -93,7 +93,18 @@ class UserController extends Controller
     {
        //
     }
+    
+    public function adduser()
+    {
+       $breadcrumbs = [
+            ['link'=>"/dashboard",'name'=>"Dashboard"],['name'=>"adduser"]
+        ];
 
+        return view('/pages/adduser', [
+            'breadcrumbs' => $breadcrumbs
+            
+        ]);
+    }
 
 /**
      * Display a listing of the resource.

@@ -347,9 +347,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset ('css/plugins/tour/tour.css')}}">
 
 
-    <!--JS Scripts -->
-<script src="{{asset('vendors/js/vendors.min.js')}}"></script>
-    <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
 <script src="{{ asset('vendors/js/charts/apexcharts.min.js')}}"></script>

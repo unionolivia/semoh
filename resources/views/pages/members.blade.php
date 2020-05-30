@@ -15,7 +15,7 @@
                 <div class="card-content">
                     <div class="card-body">
                         <p>Registration is for members that have joined foundation school.</p>
-                        <form action="/members/store" method="post" class="number-tab-steps wizard-circle" id="number-tab-steps" enctype="multipart/form-data">
+                        <form action="/member/store" method="post" class="number-tab-steps wizard-circle" id="number-tab-steps" enctype="multipart/form-data">
                             @csrf
                             <!-- Step 1 -->
                             <h6>Personal Information</h6>
