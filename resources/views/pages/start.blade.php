@@ -24,7 +24,7 @@
                     <div class="card rounded-0 mb-0 p-2">
                         <div class="card-header pt-50 pb-1">
                             <div class="card-title">
-                                <h4 class="mb-0">Welcome</h4>
+                                <h4 class="mb-0">Welcome To</h4>
                             </div>
                         </div>
                         <p class="px-2">God's Love Tarbernalce - Central Information System. <span class="strong"> GLT-CIS </span></p>
@@ -34,16 +34,21 @@
                                     stressing emphatically the integrity of God’s Word by the Power of the Holy Spirit.</p>
                                     <hr>
                                     <div>
+<<<<<<< Updated upstream
                                         <a href="/login" class="btn btn-secondary"> Login </a>
+<<<<<<< Updated upstream
+=======
+                                        <a href="/register" class="btn btn-success">Register</a>
+=======
+                                        <a href="/login" class="btn btn-success"> Login </a>
+                                        <a href="https://www.glt.church/" class="btn btn-secondary"> Church Website </a>
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
                                     </div>
                                 
                             </div>
                         </div> 
-                    </div>
-                    <a href="http://glt.church" class="btn btn-default"> GLT CHURCH </a>
-                    <a href="http://glt.church" class="btn btn-default"> SOTM </a>
-                    <a href="http://gbs.glt.church" class="btn btn-default">BUSINESS SCHOOL</a>
-
+                    </div>                    
                 </div>
             </div>
         </div>

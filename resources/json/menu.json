@@ -28,7 +28,7 @@
         "submenu": [
             {"url":"ministryreport", "name":"Ministry Report", "i18n":"nav.main_menu.sub_menu1", "icon":"feather icon-shield"},
             {"url":"servicereport", "name":"Service Report", "i18n":"nav.main_menu.sub_menu1", "icon":"feather icon-play"},
-            {"url":"carereport", "name":"Care Report", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-users"},
+            {"url":"carereport", "name":"Leaders Report", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-users"},
             {"url":"financialreport", "name":"Financial Report", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-users"},
             {"url":"smrreport", "name":"SMR Report", "i18n":"nav.main_menu.sub_menu2", "icon":"feather icon-users"}            
         ]

@@ -16,7 +16,7 @@
                         <form action="{{ route('homstore')}}" method="post" class="number-tab-steps wizard-circle" id="number-tab-steps" enctype="multipart/form-data">
                             @csrf
                             <!-- Step 1 -->
-                            <h6>Goals and Vision</h6>
+                            <h6>Vision</h6>
                             <fieldset>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -41,16 +41,36 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="ministrylist">Select Ministry</label>                                            
-                                            <select class="custom-select form-control" id="ministrylist" name="ministrylist">
-                                                <option value="">Select Ministry</option>
-                                                <option value="Lekki">Chior</option>
-                                                <option value="Ikeja">Protocol</option>
-                                                <option value="IleIfe">Pastors Protocol</option>
-                                                <option value="Akure">Media Ministry</option>
-                                            </select>                                           
+                                            <label for="ministry">Ministry :</label>
+                                            <select class="custom-select form-control" id="ministry_id" name="ministry_id">
+                                                <option disabled selected> -- select an option -- </option>
+                                                   @if ( count($ministries) > 0)
+                                                    @foreach($ministries as $ministry)
+                                                      <option value="{{ $ministry->id }}">{{ $ministry->name }}</option>
+                                                    @endforeach
+                                                    @else 
+                                                     <p>No ministry data found</p>
+                                                     @endif
+                                            </select>
                                         </div>
                                     </div>                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="extension_id">Current Extension</label><br>
+                                            <select class="textWidth form-control" name="extension_id" id="extension_id" type="text">
+                                                <option disabled selected> -- select an option -- </option>
+                                            @if ( count($extensions) > 0)
+                                                @foreach($extensions as $extension)
+                                                <option value="{{ $extension->id }}">{{ $extension->extname }}</option>
+                                                @endforeach
+                                                @else 
+                                                <p>No extension data found</p>
+                                                @endif
+                                            </select>   
+                                        </div>                                 
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -66,17 +86,22 @@
                                         </div>
                                     </div>
                                 </div>
+                               </fieldset>
+
+                            <!-- Step 2 -->
+                            <h6>Goals</h6>
+                            <fieldset>  
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="name"> Goals for the Month </label>
-                                            <textarea class="form-control" type="textarea" name="goals" id="goals" placeholder="Your Goals" maxlength="6000" rows="5"></textarea>
+                                            <textarea class="form-control" type="textarea" name="goals" id="goals" placeholder="Your Goals" maxlength="6000" rows="4"></textarea>
                                         </div>
                                     </div> 
                                     <div class="col-md-6">
                                         <div class="form-group">                                            
                                             <label for="name"> Goals Achieved </label>
-                                            <textarea class="form-control" type="textarea" name="goalsachieved" id="goalsachieved" placeholder="Your Goals Achieved" maxlength="6000" rows="5"></textarea>
+                                            <textarea class="form-control" type="textarea" name="goalsachieved" id="goalsachieved" placeholder="Your Goals Achieved" maxlength="6000" rows="4"></textarea>
                                         </div>
                                     </div>
                                 </div> 
@@ -84,15 +109,11 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="name"> Comments on Members</label>
-                                            <textarea class="form-control" type="textarea" name="memberscomment" id="memberscomment" placeholder="Your Comments" maxlength="6000" rows="7"></textarea>
+                                            <textarea class="form-control" type="textarea" name="memberscomment" id="memberscomment" placeholder="Your Comments" maxlength="6000" rows="4"></textarea>
                                          </div>
                                     </div>                
-                            </fieldset>
-
-                            <!-- Step 2 -->
-                            <h6>Care Purse: Income</h6>
-                            <fieldset>   
-                                <div class="card">
+                             
+                                {{-- <div class="card">
                                     <div class="row">
                                         <table id="myincomeTable" class="table order-list">
                                         <thead>
@@ -131,62 +152,17 @@
                                         </tfoot>
                                     </table>
                                     </div> 
-                                </div>                           
-                            </fieldset>
-
-                            <!-- Step 3 -->
-                            <h6>Care Purse: Expenses</h6>
-                            <fieldset>
-                                
-                                    <div class="row">
-                                        <table id="myexpenseTable" class="table order-list">
-                                        <thead>
-                                            <tr>
-                                                <td>Item</td>
-                                                <td>Description</td>
-                                                <td>Amount</td>
-                                                <td>Action</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <input type="text" name="purseitemexp" class="form-control" />
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="pursedescriptionexp"  class="form-control"/>
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="purseamountexp"  class="form-control"/>
-                                                </td>
-                                                <td>
-                                                    <a href="#" class="deleteRow btn btn-danger">Delete Row</a>
-                                    
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <td colspan="5" style="text-align: left;">
-                                                    <input type="button" class="btn btn-lg btn-block btn-outline-primary" id="addrowexp"  value="Add Row" />
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-                                    </div> 
-                                                                      
+                                </div>      --}}                      
                             </fieldset> 
-                            <!-- Step 4 -->
+
+                            <!-- Step 3 -->                            
                             <h6>Projection</h6>
                             <fieldset>
-                                <div class="form-group">
-                                    <h2>PROJECTION FOR THE NEXT MONTH</h2>
-                                    <label for="name"> Vision for the Month</label>
-                                    <textarea class="form-control" type="textarea" name="nextvision" id="nextvision" placeholder="Your Goals" maxlength="6000" rows="7"></textarea>
-                                     <label for="name"> Goals for the Month</label>
-                                    <textarea class="form-control" type="textarea" name="nextgoal" id="nextgoal" placeholder="Your Goals" maxlength="6000" rows="7"></textarea>
+                                <div class="form-group">                                    
+                                    <label for="name"> Vision for the Next Month</label>
+                                    <textarea class="form-control" type="textarea" name="nextvision" id="nextvision" placeholder="Your Goals" maxlength="6000" rows="4"></textarea>
+                                     <label for="name"> Goals for the Next Month</label>
+                                    <textarea class="form-control" type="textarea" name="nextgoal" id="nextgoal" placeholder="Your Goals" maxlength="6000" rows="4"></textarea>
         
                                 </div>
                             

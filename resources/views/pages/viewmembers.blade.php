@@ -25,8 +25,7 @@
                                         <th>Extension</th>
                                         <th>Role</th>
                                         <th>Ministry</th>
-                                        <th>Action</th>
-                                        <th></th>
+                                        <th colspan="3">Action</th>                                       
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -43,11 +42,22 @@
                                                                                               
                                             </td>
                                             <td>
+<<<<<<< Updated upstream
                                                 <a href="{{route('pages.adduser')}}" class='btn btn-info mt-2'>Add as User</a>
+=======
+<<<<<<< Updated upstream
+                                                <form method="POST" action="/members/{{ $member->id }}">
+=======
+                                                <a href="{{route('pages.adduser')}}" class='btn btn-outline-primary mt-2'>Add as User</a>
+>>>>>>> Stashed changes
                                                                                               
                                             </td>
                                             <td>
                                                 <form method="POST" action="/member/{{ $member->id }}">
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
                                                     @csrf
                                                      @method('DELETE')
                                                     <button type="submit" class="btn btn-danger mt-2 float-right">DELETE</button>
@@ -65,6 +75,7 @@
                                         <th>Extension</th>
                                         <th>Role</th>
                                         <th>Ministry</th>
+                                        <th  colspan="3">Action</th>                                        
                                     </tr>
                                 </tfoot>
                             </table>

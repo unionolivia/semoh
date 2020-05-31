@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Member;
+use App\User;
+use App\Models\Extension;
+use App\Models\Ministry;
+use App\Models\Report;
 
 class ReportsController extends Controller
 {
@@ -74,13 +79,16 @@ class ReportsController extends Controller
      */
     public function create()
     {
-        return view('pages.createcarereport');
+        $ministries = Ministry::get();
+        $extensions = Extension::get();
+        return view('pages.createcarereport', compact('ministries', 'extensions'));
     }
 
 
     public function createahom()
     {
-        return view('pages.createahomcarereport');
+        $ministries = Ministry::get();
+        return view('pages.createahomcarereport')->with('ministries', $ministries);
     }
 
     /**
@@ -97,6 +105,44 @@ class ReportsController extends Controller
     public function homstore(Request $request)
     {
         dd($request);
+
+        $this->validate($request, [
+
+            'month' => 'required',
+            'ministry_id' => 'required',
+            'vision',
+            'monthvision' => 'required',
+            'goals' => 'required',
+            'goalsachieved' => 'required',
+            'memberscomment' => 'required',
+            'nextvision' => 'required',
+            'nextgoal' => 'required',
+            'user_id' => 'required',
+            'extension_id' => 'required'
+
+            ]);
+
+        $report = new Report();
+        $report->user_id = Auth::id();
+        $report->extension_id = $request->input('extension_id');
+        $report->month = $request->input('month');
+        $report->ministry_id = $request->input('ministry_id');
+        $report->vision = $request->input('vision');
+        $report->monthvision = $request->input('monthvision');
+        $report->goals = $request->input('goals');
+        $report->goalsachieved = $request->input('goalsachieved');
+        $report->memberscomment = $request->input('memberscomment');
+        $report->nextvision = $request->input('nextvision');
+        $report->nextgoal = $request->input('nextgoal');
+        $report->save();
+
+
+         return redirect('/carereport')->with('success', 'Report Submitted Successfully');
+
+            
+    
+       
+
     }
 
 

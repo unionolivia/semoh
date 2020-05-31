@@ -17,6 +17,7 @@
               <div class="text-center">
               @if(!empty($member->pictureFile))
                 <img class="profile-user-img img-fluid img-circle round"
+<<<<<<< Updated upstream
                      src="{{ asset('public/members_images/'.$member->pictureFile)}}"
                      alt="User profile picture">
                  @else
@@ -24,6 +25,20 @@
                      src="{{ asset('public/noimage.jpg') }}"
                      alt="User profile picture">
                  @endif
+=======
+<<<<<<< Updated upstream
+                     src="/storage/members_images/{{ $member->pictureFile  }}"
+                     alt="User profile picture">
+=======
+                     src="{{ asset( 'public/members_images/'.$member->pictureFile)}}"
+                     alt="User profile picture">
+                 @else
+                  <img class="profile-user-img img-fluid img-circle round"
+                     src="{{ asset('public/members_images/noimage.jpg') }}"
+                     alt="User profile picture">
+                 @endif
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
               </div>
               <hr>
               <h3 class="profile-username text-center">{{!empty($member->firstName1) ? $member->firstName1 : ''  }} {{ !empty($member->lastName1) ?  $member->lastName1 : '' }}</h3>              

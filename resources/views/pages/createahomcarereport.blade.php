@@ -41,14 +41,17 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="ministrylist">Select Ministry</label>                                            
-                                            <select class="custom-select form-control" id="ministrylist" name="ministrylist">
-                                                <option value="">Select Ministry</option>
-                                                <option value="Lekki">Chior</option>
-                                                <option value="Ikeja">Protocol</option>
-                                                <option value="IleIfe">Pastors Protocol</option>
-                                                <option value="Akure">Media Ministry</option>
-                                            </select>                                           
+                                            <label for="ministry">Ministry :</label>
+                                            <select class="custom-select form-control" id="ministry_id" name="ministry_id">
+                                                <option disabled selected> -- select an option -- </option>
+                                                   @if ( count($ministries) > 0)
+                                                    @foreach($ministries as $ministry)
+                                                      <option value="{{ $ministry->id }}">{{ $ministry->name }}</option>
+                                                    @endforeach
+                                                    @else 
+                                                     <p>No ministry data found</p>
+                                                     @endif
+                                            </select>
                                         </div>
                                     </div>                                    
                                 </div>
@@ -56,13 +59,13 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="name">Vision For the Year 2018</label>
-                                            <input type="text" class="form-control" id="vision" name="vision" required maxlength="50">                                            
+                                            <input type="text" class="form-control" id="yearvision" name="yearvision" required maxlength="50">                                            
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="email"> Vision for the Month</label>
-                                            <input type="text" class="form-control" id="vision" name="vision" required maxlength="50">
+                                            <input type="text" class="form-control" id="monthvision" name="monthvision" required maxlength="50">
                                         </div>
                                     </div>
                                 </div>
@@ -70,13 +73,13 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="name"> Goals for the Month </label>
-                                            <textarea class="form-control" type="textarea" name="goals" id="goals" placeholder="Your Goals" maxlength="6000" rows="7"></textarea>
+                                            <textarea class="form-control" type="textarea" name="monthgoals" id="monthgoals" placeholder="Your Goals" maxlength="6000" rows="7"></textarea>
                                         </div>
                                     </div> 
                                     <div class="col-md-6">
                                         <div class="form-group">                                            
                                             <label for="name"> Goals Achieved </label>
-                                            <textarea class="form-control" type="textarea" name="goals" id="goals" placeholder="Your Goals Achieved" maxlength="6000" rows="7"></textarea>
+                                            <textarea class="form-control" type="textarea" name="goalsachieved" id="goalsachieved" placeholder="Your Goals Achieved" maxlength="6000" rows="7"></textarea>
                                         </div>
                                     </div>
                                 </div> 
@@ -84,19 +87,20 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="name"> Comments on Members</label>
-                                            <textarea class="form-control" type="textarea" name="goals" id="goals" placeholder="Your Comments" maxlength="6000" rows="7"></textarea>
+                                            <textarea class="form-control" type="textarea" name="commentsonmembers" id="commentsonmembers" placeholder="Your Comments" maxlength="6000" rows="7"></textarea>
                                          </div>
                                     </div>                
                             </fieldset>
 
                             <!-- Step 2 -->
-                            <h6>ACTIVITIES</h6>
+                            <h6>CARE: INCOME</h6>
                             <fieldset>   
                                 <div class="card">
                                     <div class="row">
                                         <table id="myTable" class="table order-list">
                                         <thead>
                                             <tr>
+                                                <td>#</td>
                                                 <td>Item</td>
                                                 <td>Description</td>
                                                 <td>Amount</td>
@@ -105,14 +109,15 @@
                                         </thead>
                                         <tbody>
                                             <tr>
+                                                <td>1</td>
                                                 <td>
-                                                    <input type="text" name="purseitem" class="form-control" />
+                                                    <input type="text" name="incomepurseitem" class="form-control" />
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="pursedescription"  class="form-control"/>
+                                                    <input type="text" name="incomepursedescription"  class="form-control"/>
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="amount"  class="form-control"/>
+                                                    <input type="text" name="incomeamount"  class="form-control"/>
                                                 </td>
                                                 <td>
                                                     <a href="#" class="deleteRow btn btn-danger">Delete Row</a>
@@ -134,14 +139,59 @@
                                 </div>                           
                             </fieldset>                          
                             <!-- Step 3-->
+                            <h6>CARE: EXPENSES</h6>
+                            <fieldset>   
+                                <div class="card">
+                                    <div class="row">
+                                        <table id="myTable" class="table order-list">
+                                        <thead>
+                                            <tr>
+                                                <td>#</td>
+                                                <td>Item</td>
+                                                <td>Description</td>
+                                                <td>Amount</td>
+                                                <td>Action</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>
+                                                    <input type="text" name="expensepurseitem" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="expensepursedescription"  class="form-control"/>
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="expenseamount"  class="form-control"/>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="deleteRow btn btn-danger">Delete Row</a>
+                                    
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="5" style="text-align: left;">
+                                                    <input type="button" class="btn btn-lg btn-block btn-outline-primary" id="addrow" value="Add Row" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                    </div> 
+                                </div>                           
+                            </fieldset>    
+                            <!-- Step 4-->
                             <h6>Projection</h6>
                             <fieldset>
-                                <div class="form-group">
-                                    <h2>PROJECTION FOR THE NEXT MONTH</h2>
+                                <div class="form-group">                                    
                                     <label for="name"> Vision for the Month</label>
-                                    <textarea class="form-control" type="textarea" name="goals" id="goals" placeholder="Your Goals" maxlength="6000" rows="7"></textarea>
+                                    <textarea class="form-control" type="textarea" name="nextmonthvision" id="nextmonthvision" placeholder="Your Goals" maxlength="6000" rows="7"></textarea>
                                      <label for="name"> Goals for the Month</label>
-                                    <textarea class="form-control" type="textarea" name="goals" id="goals" placeholder="Your Goals" maxlength="6000" rows="7"></textarea>
+                                    <textarea class="form-control" type="textarea" name="nextmonthgoals" id="nextmonthgoals" placeholder="Your Goals" maxlength="6000" rows="7"></textarea>
         
                                 </div>                            
                             </fieldset>                          
@@ -177,12 +227,5 @@
 
 <!-- BEGIN: Page JS-->
 <script src="{{ asset('/js/scripts/pickers/dateTime/pick-a-datetime.js') }}"></script>
-
-
-
-
-
-
-
 
 @endpush
