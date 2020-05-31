@@ -16,8 +16,9 @@ Route::get('/', ['as'   => 'pages.start', 'uses' => 'LayoutController@full']);
 
 
 //Ministry
-Route::resource('ministry', 'MinistryController');
-Route::post('/ministry/update', 'MinistryController@update')->name('update-ministry');
+Route::resource('ministries', 'MinistryController');
+Route::get('ministry', ['as'   => 'pages.ministry', 'uses' => 'MinistryController@index']);
+Route::post('/ministries/update', 'MinistryController@update')->name('update-ministry');
 
 
 //Dashboard
@@ -33,15 +34,17 @@ Route::get('editext/{id}', ['as' => 'pages.editext', 'uses' => 'ExtensionControl
 
 
 //Units & Commitee
-Route::resource('unit', 'UnitController');
-Route::post('/unit/update', 'UnitController@update')->name('update-unit');
-Route::get('committee', 'UnitController@committee');
+Route::resource('units', 'UnitController');
+Route::get('unit', ['as'   => 'pages.unit', 'uses' => 'UnitController@index']);
+Route::post('/units/update', 'UnitController@update')->name('update-unit');
+Route::get('committee', ['as' => 'pages.committee', 'uses' => 'UnitController@committee']);
 
 //Events
-Route::resource('events', 'EventsController');
-
+Route::resource('event', 'EventsController');
+Route::get('events', ['as'   => 'pages.events', 'uses' => 'EventsController@index']);
 //Mails
-Route::resource('ticket','MailController');
+Route::resource('tickets', 'MailController');
+Route::get('ticket', ['as'   => 'pages.ticket', 'uses' => 'MailController@index']);
 
 // user controller
 Route::get('approveuser', 'UserController@approve');
@@ -62,18 +65,18 @@ Route::post('/member/update', 'MembersController@update')->name('update');
 
 // Report 
 Route::resource('report', 'ReportsController');
-Route::get('/ministryreport', 'ReportsController@ministryreport');
-Route::get('/financialreport', 'ReportsController@financialreport');
-Route::get('/carereport', 'ReportsController@carereport');
-Route::get('/smrreport', 'ReportsController@smrreport');
-Route::get('/servicereport', 'ReportsController@servicereport');
-Route::get('/createcarereport', 'ReportsController@create');
-Route::get('/createahomcarereport', 'ReportsController@createahom');
+Route::get('ministryreport', ['as' => 'pages.ministryreport', 'uses' => 'ReportsController@ministryreport']);
+Route::get('financialreport', ['as' => 'pages.financialreport', 'uses' =>  'ReportsController@financialreport']);
+Route::get('carereport', ['as' => 'pages.carereport', 'uses' => 'ReportsController@carereport']);
+Route::get('smrreport', ['as' => 'pages.smrreport', 'uses' => 'ReportsController@smrreport']);
+Route::get('servicereport', ['as' => 'pages.servicereport', 'uses' => 'ReportsController@servicereport']);
+Route::get('createcarereport', ['as' => 'pages.createcarereport', 'uses' => 'ReportsController@create']);
+Route::get('createahomcarereport', ['as' => 'pages.createahomcarereport', 'uses' => 'ReportsController@createahom']);
 Route::Post('/homstore', 'ReportsController@homstore')->name('homstore');
 Route::Post('/ahomstore', 'ReportsController@ahomstore')->name('ahomstore');
 
 // Route full layout
-Route::get('full', 'LayoutController@full');
+Route::get('full', ['as'   => 'pages.start', 'uses' => 'LayoutController@full']);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

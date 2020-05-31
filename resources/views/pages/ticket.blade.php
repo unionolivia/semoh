@@ -705,9 +705,9 @@
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
-    <script src="{{ asset ('js/core/app-menu.js')}}"></script>
+    {{--<script src="{{ asset ('js/core/app-menu.js')}}"></script>
     <script src="{{ asset ('js/core/app.js')}}"></script>
-    <script src="{{ asset ('js/scripts/components.js')}}"></script>
+    <script src="{{ asset ('js/scripts/components.js')}}"></script>--}}
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
