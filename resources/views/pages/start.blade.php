@@ -34,10 +34,16 @@
                                     stressing emphatically the integrity of God’s Word by the Power of the Holy Spirit.</p>
                                     <hr>
                                     <div>
+<<<<<<< Updated upstream
+                                        <a href="/login" class="btn btn-secondary"> Login </a>
+<<<<<<< Updated upstream
+=======
+                                        <a href="/register" class="btn btn-success">Register</a>
+=======
                                         <a href="/login" class="btn btn-success"> Login </a>
                                         <a href="https://www.glt.church/" class="btn btn-secondary"> Church Website </a>
-
-
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
                                     </div>
                                 
                             </div>

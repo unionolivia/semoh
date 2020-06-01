@@ -24,7 +24,22 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-       Schema::defaultStringLength(191);
-     
+        //
+<<<<<<< Updated upstream
+        Schema::defaultStringLength(191);
+        $this->app->bind('path.public', function() {
+          return realpath(base_path().'/../public_html/gltapp.1000homes.ng');
+        });
+        
+=======
+<<<<<<< Updated upstream
+=======
+        // Schema::defaultStringLength(191);
+        // $this->app->bind('path.public', function() {
+        //   return realpath(base_path().'/../public_html/gltapp.1000homes.ng');
+        // });
+        
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     }
 }
