@@ -27,7 +27,7 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form action="/unit" method="POST">
+                                    <form action="/units" method="POST">
                                         @csrf
                                         <div class="modal-body">
                                             <label>Name: </label>
@@ -76,7 +76,7 @@
                                             </button>
                                         </td>
                                         <td>
-                                            <form action="/unit/{{$Unit->id}}" method="POST" >
+                                            <form action="/units/{{$Unit->id}}" method="POST" >
                                                 @csrf
                                                 @method('DELETE')
                                                     <button type="submit" class="btn btn-outline-danger">Delete</button>

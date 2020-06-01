@@ -59,7 +59,7 @@
                         @endif
                         <!-- dataTable ends -->
                          <!-- add new sidebar starts -->
-                         <form action="/ministry" method="post">
+                         <form action="/ministries" method="post">
                             @csrf
                             <div class="add-new-data-sidebar">
                                 <div class="overlay-bg"></div>
@@ -131,7 +131,7 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form action="/ministry" method="POST">
+                                    <form action="/ministries" method="POST">
                                         @csrf
                                         <div class="modal-body">
                                             <label>Name: </label>
@@ -180,7 +180,7 @@
                                             </button>
                                         </td>
                                         <td>
-                                            <form action="/ministry/{{$ministry->id}}" method="POST" >
+                                            <form action="/ministries/{{$ministry->id}}" method="POST" >
                                                 @csrf
                                                 @method('DELETE')
                                                     <button type="submit" class="btn btn-outline-danger">Delete</button>
