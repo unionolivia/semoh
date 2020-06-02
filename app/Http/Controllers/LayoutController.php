@@ -24,7 +24,7 @@ class LayoutController extends Controller
             'bodyClass' => "bg-full-screen-image",
         ];
         
-        return view('/pages/full-layout', [
+        return view('/pages/start', [
             'pageConfigs' => $pageConfigs
         ]);
     }

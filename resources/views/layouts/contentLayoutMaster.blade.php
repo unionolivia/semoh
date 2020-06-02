@@ -14,8 +14,8 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>@yield('title') - Homes for you.</title>
-        <link rel="shortcut icon" type="image/x-icon" href="../images/logo/favicon.ico">
+        <title>@yield('title') - Central Information System</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../images/logo/glt.ico">
 
         {{-- Include core + vendor Styles --}}
         @include('panels/styles')
@@ -44,11 +44,13 @@
 
             {{-- Include Navbar --}}
             @include('panels.navbar')
-
+            
             <div class="content-wrapper">
+                @include('inc.message')
 
                 {{-- Include Breadcrumb --}}
                 @include('panels.breadcrumb')
+               
 
                 <div class="content-body">
 
@@ -68,6 +70,10 @@
         {{-- include footer --}}
         @include('panels/footer')
 
+    <!--JS Scripts -->
+<script src="{{asset('vendors/js/vendors.min.js')}}"></script>
+    <!-- BEGIN Vendor JS-->
+    
         {{-- include default scripts --}}
         @include('panels/scripts')
 

@@ -99,11 +99,34 @@
                             <li class="dropdown-menu-footer"><a class="dropdown-item p-1 text-center" href="javascript:void(0)">Read all notifications</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                    {{-- <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
                             <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">Smith Sisanmi</span><span class="user-status">Available</span></div><span><img class="round" src="../images/portrait/small/avatar-s-11.jpeg" alt="avatar" height="40" width="40" /></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="feather icon-user"></i> Edit Profile</a><a class="dropdown-item" href="#"><i class="feather icon-mail"></i> My Inbox</a><a class="dropdown-item" href="#"><i class="feather icon-check-square"></i> Task</a><a class="dropdown-item" href="#"><i class="feather icon-message-square"></i> Chats</a>
                             <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="feather icon-power"></i> Logout</a>
+                        </div>
+                    </li> --}}
+                    <li class="nav-item dropdown dropdown-user">
+                        <a id="navbarDropdown" class="nav-link dropdown-user-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">
+                                {{ Auth::user()->name }} <span class="caret"></span><br><span class="user-status">Available</span></div>
+                                <span><img class="round" src="{{ asset('/images/portrait/small/avatar-s-11.jpeg') }}" alt="avatar" height="40" width="40" /></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/editprofile"><i class="feather icon-user"></i> Edit Profile</a>
+                            <a class="dropdown-item" href="#"><i class="feather icon-mail"></i> My Inbox</a>
+                            <a class="dropdown-item" href="#"><i class="feather icon-check-square"></i> Task</a>
+                            <a class="dropdown-item" href="#"><i class="feather icon-message-square"></i> Chats</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
                     </li>
                 </ul>

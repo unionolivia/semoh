@@ -1,0 +1,146 @@
+ <!-- Step 3 -->
+                                <h6>Parent Information</h6>
+                                <fieldset>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="firstName1">Fathers' Name </label>
+                                            <input type="text" class="form-control" id="fathersName" name="fathersName">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="lastName1">Mothers' Name</label>
+                                            <input type="text" class="form-control" id="mothersName" name="mothersName">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="otherName1">Fathers' Occupation</label>
+                                            <input type="text" class="form-control" id="fatherOccupation" name="fatherOccupation">
+                                        </div>
+                                    </div> 
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="emailAddress1">Parent Email</label>
+                                            <input type="email" class="form-control" id="parentemailAddress" name="parentemailAddress">
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                                <label for="firstName1">Parent Phone number </label>
+                                                <input type="text" class="form-control" id="parentPhonenumber" name="parentPhonenumber">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <label for="shortDescription1">Parent Address :</label>
+                                                <textarea name="parentAddress" id="parentAddress" rows="3" class="form-control"></textarea>
+                                            </div>                                            
+                                        </div>                                            
+                                    </div>
+                                </div>                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="parentMaritalStatus">Parent Marital Status</label>
+                                            <select class="custom-select form-control" id="parentMaritalStatus" name="parentMaritalStatus">
+                                                <option value="new-york">single</option>
+                                                <option value="chicago">married</option>
+                                                <option value="san-francisco">seperated</option>
+                                                <option value="boston">Divorced</option>
+                                            </select>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                                </fieldset>
+
+
+                                <!-- step 4 -->
+                                <h6>Unit/Ministry/Department</h6>
+                                <fieldset>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="eventName1">Ministry :</label>
+                                            <select class="custom-select form-control" id="ministry1" name="ministry1">
+                                                <option value="">Select</option>
+                                                <option value="Banquet">Evangelism</option>
+                                                <option value="Fund Raiser">Choir</option>
+                                                <option value="Dinner Party">Pastor's Protocol</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="eventType1">Department/Unit :</label>
+                                            <select class="custom-select form-control" id="eventType1" name="eventType1">
+                                                <option value="">Select</option>
+                                                <option value="Banquet">Business School</option>
+                                                <option value="Fund Raiser">Software</option>
+                                                <option value="Dinner Party">Kitchen</option>
+                                            </select>
+                                        </div>
+                                    </div>                                    
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="extension">Extension :</label>
+                                            <select class="custom-select form-control" id="extension" name="extension">
+                                                <option value="">Select</option>
+                                                <option value="new-york">Lekki</option>
+                                                <option value="chicago">Akure</option>
+                                                <option value="san-francisco">Ikeja</option>
+                                                <option value="boston">Ile-ife</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group d-flex align-items-center pt-md-2">
+                                            <label class="mr-2">Requirements :</label>
+                                            <div class="c-inputs-stacked">
+                                                <div class="d-inline-block mr-2">
+                                                    <div class="vs-checkbox-con vs-checkbox-primary">
+                                                        <input type="checkbox" value="false">
+                                                        <span class="vs-checkbox">
+                                                            <span class="vs-checkbox--check">
+                                                                <i class="vs-icon feather icon-check"></i>
+                                                            </span>
+                                                        </span>
+                                                        <span class="">Born Again</span>
+                                                    </div>
+                                                </div>
+                                                <div class="d-inline-block">
+                                                    <div class="vs-checkbox-con vs-checkbox-primary">
+                                                        <input type="checkbox" value="false">
+                                                        <span class="vs-checkbox">
+                                                            <span class="vs-checkbox--check">
+                                                                <i class="vs-icon feather icon-check"></i>
+                                                            </span>
+                                                        </span>
+                                                        <span class="">Spirit Filled</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                                        
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12  data-field-col">
+                                            <div class="form-group">
+                                                <label for="eventType1">Assign Role :</label>
+                                                <select class="custom-select form-control" id="assignRole" name="assignRole">
+                                                    <option value="">Select</option>
+                                                    <option value="Banquet">SMR</option>
+                                                    <option value="Fund Raiser">Pastor</option>
+                                                    <option value="Fund Raiser">Minister</option>
+                                                    <option value="Fund Raiser">HOD</option>
+                                                    <option value="Fund Raiser">AHOD</option>
+                                                    <option value="Dinner Party">Member</option>
+                                                </select>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                
+                                </fieldset>

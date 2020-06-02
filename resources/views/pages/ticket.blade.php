@@ -5,23 +5,6 @@
 
 @section('content')
 
-
-<!-- BEGIN: Body-->
-
-<body class="vertical-layout vertical-menu-modern content-left-sidebar email-application navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="content-left-sidebar">
-
-    <!-- BEGIN: Main Menu-->
-    
-    <!-- END: Main Menu-->
-
-    <!-- BEGIN: Content-->
-    <div class="app-content content">
-
-        <!-- BEGIN: Header-->
-      
-        <!-- END: Header-->
-
-        <div class="content-area-wrapper col-12">
             <div class="sidebar-left">
                 <div class="sidebar">
                     <div class="sidebar-content email-app-sidebar d-flex">
@@ -173,7 +156,7 @@
                                             <li class="media mail-read">
                                                 <div class="media-left pr-50">
                                                     <div class="avatar">
-                                                        <img src="../../../app-assets/images/portrait/small/avatar-s-20.png" alt="avtar img holder">
+                                                        <img src="{{ asset('images/portrait/small/avatar-s-20.png')}}" alt="avtar img holder">
                                                     </div>
                                                     <div class="user-action">
                                                         <div class="vs-checkbox-con">
@@ -207,7 +190,7 @@
                                             <li class="media">
                                                 <div class="media-left pr-50">
                                                     <div class="avatar">
-                                                        <img class="media-object rounded-circle" src="../../../app-assets/images/portrait/small/avatar-s-17.png" alt="Generic placeholder image">
+                                                        <img class="media-object rounded-circle" src="{{ asset ('images/portrait/small/avatar-s-17.png')}}" alt="Generic placeholder image">
                                                     </div>
                                                     <div class="user-action">
                                                         <div class="vs-checkbox-con">
@@ -642,7 +625,7 @@
                                                 <div class="card-header email-detail-head ml-75">
                                                     <div class="user-details d-flex justify-content-between align-items-center flex-wrap">
                                                         <div class="avatar mr-75">
-                                                            <img src="../images/portrait/small/avatar-s-18.png" alt="avtar img holder" width="61" height="61">
+                                                            <img src="../../../app-assets/images/portrait/small/avatar-s-18.png" alt="avtar img holder" width="61" height="61">
                                                         </div>
                                                         <div class="mail-items">
                                                             <h4 class="list-group-item-heading mb-0">Ardis Balderson</h4>
@@ -705,56 +688,48 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- END: Content-->
-
-    <div class="sidenav-overlay"></div>
-    <div class="drag-target"></div>
-
-    <!-- BEGIN: Footer-->
-   
-    <!-- END: Footer-->
-
-
-    <!-- BEGIN: Vendor JS-->
-    <script src="../../../app-assets/vendors/js/vendors.min.js"></script>
-    <!-- BEGIN Vendor JS-->
-
-    <!-- BEGIN: Page Vendor JS-->
     
+
+
+
+<!--/ Description -->
+@endsection
+
+
+@push('scripts')
+        
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{{ asset ('vendors/js/editors/quill/katex.min.js')}}"></script>
+    <script src="{{ asset ('vendors/js/editors/quill/highlight.min.js')}}"></script>
+    <script src="{{ asset ('vendors/js/editors/quill/quill.min.js')}}"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
-    <script src="../../../app-assets/js/core/app-menu.js"></script>
-    <script src="../../../app-assets/js/core/app.js"></script>
-    <script src="../../../app-assets/js/scripts/components.js"></script>
+    {{--<script src="{{ asset ('js/core/app-menu.js')}}"></script>
+    <script src="{{ asset ('js/core/app.js')}}"></script>
+    <script src="{{ asset ('js/scripts/components.js')}}"></script>--}}
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
     
     <!-- END: Page JS-->
 
-</body>
-<!-- END: Body-->
-
-</html>
-@endsection
-
-@push('scripts')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/plugins/forms/validation/form-validation.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('css/plugins/forms/wizard.min.css') }}">
-<script src="vendors/js/forms/validation/jqBootstrapValidation.js"></script>
-<script src="vendors/js/extensions/jquery.steps.min.js"></script>
-<script src="vendors/js/forms/validation/jquery.validate.min.js"></script>
-<script src="{{ asset('js/scripts/forms/wizard-steps.min.js') }}"></script>
-<!-- added scripts for email --> 
-<script src="vendors/js/editors/quill/katex.min.js"></script>
-<script src="vendors/js/editors/quill/highlight.min.js"></script>
-<script src="vendors/js/editors/quill/quill.min.js"></script>
-<script src="{{ asset('js/scripts/pages/app-email.js')  }}"></script>
 
 
-<link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
+    <script src="{{ asset ('vendors/js/editors/quill/katex.min.js')}}"></script>
+    <script src="{{ asset ('vendors/js/editors/quill/highlight.min.js') }}"></script>
+    <script src="{{ asset ('vendors/js/editors/quill/quill.min.js') }}"></script>
+    <script src="{{ asset ('js/scripts/pages/app-email.js') }}"></script>
+
+
+
+<link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/editors/quill/katex.min.cs')}}s">
+<link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/editors/quill/monokai-sublime.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/editors/quill/quill.snow.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/core/colors/palette-gradient.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/pages/app-email.css')}}">
+
+
+   
 @endpush
+

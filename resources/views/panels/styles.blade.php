@@ -1,9 +1,9 @@
 {{-- Vendor Styles --}}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600">
-<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="vendors/css/vendors.min.css">
-<link rel="stylesheet" href="vendors/css/ui/prism.min.css">
-<link href="{{ asset('css/app.css') }}" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" href="{{ asset('fonts/font-awesome/css/font-awesome.min.css') }}">
+<link rel="stylesheet" href="{{ asset('vendors/css/vendors.min.css') }}">
+<link rel="stylesheet" href="{{ asset('vendors/css/ui/prism.min.css') }}">
+<link href="{{ asset('css/app.css') }}" type="text/css" rel="stylesheet') }}" />
 
 <!-- Vendor CSS -->
 

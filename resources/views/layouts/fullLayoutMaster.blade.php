@@ -14,8 +14,8 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>@yield('title') - Vuesax HTML Laravel admin dashboard template</title>
-        <link rel="shortcut icon" type="image/x-icon" href="../images/logo/favicon.ico">
+        <title>@yield('title') - Central Information System</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../images/logo/glt.ico">
 
         {{-- Include core + vendor Styles --}}
         @include('panels/styles')
@@ -34,6 +34,7 @@
 
         <!-- BEGIN: Content-->
         <div class="app-content content">
+            @include('inc.message')
             <div class="content-wrapper">
                 <div class="content-body">
 
