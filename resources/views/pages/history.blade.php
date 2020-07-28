@@ -11,36 +11,40 @@
             </div>
             <div class="card-content">
                 <div class="card-body">
-                    <p class="card-text">Use <code class="highlighter-rouge">.table-striped</code> to add zebra-striping to any table row within the <code class="highlighter-rouge">&lt;tbody&gt;</code>. This styling doesn't work in IE8 and below as <code>:nth-child</code> CSS selector isn't supported.</p>
+                    <p class="card-text">All payment made within the last 6 months.</p>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-striped mb-0">
                         <thead>
                             <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">User ID</th>
+                                <th scope="col">Invoice No.</th>
+                                <th scope="col">Date</th>                                
+                                <th scope="col">Description</th>
+                                <th scope="col">Amount paid</th>
+                                <th scope="col">Receipt</th>
                             </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <th scope="row">1</th>
-                          <td>Leanne Graham</td>
-                          <td>sincere@april.biz</td>
-                          <td>@mdo</td>
+                          <th scope="row">221</th>
+                          <td>15th March, 2018</td>
+                          <td>Marvel Court stage one (Foundation)</td>
+                          <td><span>&#8358;</span>8,000,000.00</td>
+                          <td><a href="/invoice" class="btn btn-outline-primary float-left btn-inline mb-50">View</a></td>
                         </tr>
                         <tr>
-                          <th scope="row">2</th>
-                          <td>Ervin Howell</td>
-                          <td>shanna@melissa.tv</td>
-                          <td>@fat</td>
+                          <th scope="row">222</th>
+                          <td>30th April, 2018</td>
+                          <td>Marvel Cour Stage two - (Block work)</td>
+                          <td><span>&#8358;</span>3,000,000.00</td>
+                          <td><a href="/invoice" class="btn btn-outline-primary float-left btn-inline mb-50">View</a></td>
                         </tr>
                         <tr>
-                          <th scope="row">3</th>
-                          <td>Clementine Bauch</td>
-                          <td>nathan@yesenia.net</td>
-                          <td>@twitter</td>
+                          <th scope="row">223</th>
+                          <td>21st May, 2018</td>
+                          <td>Marvel Court Stage Three - (Decking works)</td>
+                          <td><span>&#8358;</span>3,500,000.00</td>
+                          <td><a href="/invoice" class="btn btn-outline-primary float-left btn-inline mb-50">View</a></td>
                         </tr>
                       </tbody>
                     </table>

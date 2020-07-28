@@ -3,8 +3,8 @@
 @section('title', 'Projects')  <!-- change title accordingly-->
 
 @section('content')
-<section id="ecommerce-products" class="grid-view">
 
+<section id="ecommerce-products" class="grid-view">
 <div class="card ecommerce-card">
     <div class="card-content">
       <div class="item-img text-center">

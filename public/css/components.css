@@ -498,8 +498,8 @@ body.footer-hidden .footer {
 
 .main-menu.menu-light .navigation > li.open > a,
 .main-menu.menu-light .navigation > li.sidebar-group-active > a {
-  color: #494949;
-  background: whitesmoke;
+  color: #fff;
+  background: #144D6C;
   transition: transform 0.25s ease 0s;
   border-radius: 6px;
   margin-bottom: 7px;

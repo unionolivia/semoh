@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class FinancialController extends Controller
+class InvestController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,55 +13,16 @@ class FinancialController extends Controller
      */
     public function index()
     {
-       
-    }
-
-    public function history(){
         $breadcrumbs = [
-            ['link'=>"/dashboard",'name'=>"Dashboard"],['link' => "#", 'name'=>"Financials"], ['name' => "History"]
+            ['link'=>"/dashboard",'name'=>"Dashboard"], ['name' => "Invest"]
         ];
 
-        return view('/pages/history', [
+        return view('/pages/invest', [
             'breadcrumbs' => $breadcrumbs
             
         ]);
     }
 
-
-
-    public function invoice(){
-        $breadcrumbs = [
-            ['link'=>"/dashboard",'name'=>"Dashboard"],['link' => "#", 'name'=>"Financials"], ['name' => "Invoice"]
-        ];
-
-        return view('/pages/invoice', [
-            'breadcrumbs' => $breadcrumbs
-            
-        ]);
-    }
-
-
-    public function projection(){
-        $breadcrumbs = [
-            ['link'=>"/dashboard",'name'=>"Dashboard"],['link' => "#", 'name'=>"Financials"], ['name' => "Projection"]
-        ];
-
-        return view('/pages/projection', [
-            'breadcrumbs' => $breadcrumbs
-            
-        ]);
-    }
-
-    public function comm(){
-        $breadcrumbs = [
-            ['link'=>"/dashboard",'name'=>"Dashboard"],['link' => "#", 'name'=>"Financials"], ['name' => "Commission"]
-        ];
-
-        return view('/pages/commission', [
-            'breadcrumbs' => $breadcrumbs
-            
-        ]);
-    }
     /**
      * Show the form for creating a new resource.
      *

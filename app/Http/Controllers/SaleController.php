@@ -23,6 +23,17 @@ class SaleController extends Controller
         ]);
     }
 
+    public function saleslist()
+    {
+        $breadcrumbs = [
+            ['link'=>"/dashboard",'name'=>"Dashboard"],['name'=>"Sales"]
+        ];
+
+        return view('/pages/saleslist', [
+            'breadcrumbs' => $breadcrumbs
+            
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *

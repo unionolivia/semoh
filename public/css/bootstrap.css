@@ -2569,6 +2569,20 @@ fieldset:disabled a.btn {
   pointer-events: none;
 }
 
+
+a.btn.btn-custom{
+  color: white;
+  background-color:#144D6C;
+  border-color: #144D6C;
+}
+
+.btn-custom:hover{
+  color: #fff;
+  background-color: #144D6C;
+  border-color: #144D6C;
+}
+
+
 .btn-primary {
   color: #fff;
   background-color: #7367f0;

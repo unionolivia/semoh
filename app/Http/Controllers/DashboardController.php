@@ -23,6 +23,33 @@ class DashboardController extends Controller
         ]);
     }
 
+    public function agentindex()
+    {
+        $breadcrumbs = [
+            ['link'=>"/",'name'=>"Home"], ['name' => "Dashboard"]
+        ];
+
+        return view('/pages/dashboard-agent', [
+            'breadcrumbs' => $breadcrumbs
+            
+        ]);
+    }
+
+   
+
+
+    public function adminindex()
+    {
+        $breadcrumbs = [
+            ['link'=>"/",'name'=>"Home"], ['name' => "Dashboard"]
+        ];
+
+        return view('/pages/dashboard-admin', [
+            'breadcrumbs' => $breadcrumbs
+            
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

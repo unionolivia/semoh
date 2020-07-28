@@ -27,3 +27,4 @@ $configData = Helper::applClasses();
 
 <!-- Page Styles -->
 <link rel="stylesheet" href="{{ asset('css/core/menu/menu-types/vertical-menu.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/core/colors/palette-gradient.css')}}">
